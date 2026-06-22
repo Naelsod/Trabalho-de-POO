@@ -44,7 +44,7 @@ public class Main {
         atendente.listarClientesAtendidos();
 
         // 9) Exemplo de heranca: Empresa tambem e Cliente, mas possui CNPJ
-        Empresa empresa = new Empresa("Mercado Patos", "contato@mercadopatos.com", "000.000.000-00", "12.345.678/0001-99");
+        Empresa empresa = new Empresa("Mercado Patos", "contato@mercadopatos.com", "12.345.678/0001-99");
         empresa.registrarEndereco(new Endereco("Av. Brasil", "200", "Lagoa Grande", "Patos de Minas", "MG"));
         System.out.println("\nExemplo de heranca: " + empresa);
 

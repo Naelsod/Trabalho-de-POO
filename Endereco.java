@@ -15,6 +15,15 @@ public class Endereco {
         this.estado = estado;
     }
 
+    // Sobrecarga: permite criar endereço sem bairro
+    public Endereco(String rua, String numero, String cidade, String estado) {
+        this.rua = rua;
+        this.numero = numero;
+        this.bairro = "Nao informado";
+        this.cidade = cidade;
+        this.estado = estado;
+    }
+
     public String getRua() {
         return rua;
     }

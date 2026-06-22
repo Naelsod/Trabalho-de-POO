@@ -10,7 +10,7 @@ public class Cliente {
     private FormaPagamento formaPagamento;
     private ArrayList<Pedido> pedidos;
 
-    // Sobrecarga de construtores
+    // Construtor principal para Pessoa Física
     public Cliente(String nome, String email, String cpf) {
         this.nome = nome;
         this.email = email;
@@ -18,8 +18,22 @@ public class Cliente {
         this.pedidos = new ArrayList<>();
     }
 
+    // Sobrecarga de construtor: já cria o cliente com endereço
     public Cliente(String nome, Endereco endereco, String email, String cpf) {
         this(nome, email, cpf);
+        this.endereco = endereco;
+    }
+
+    // Construtor protegido para ser usado pela classe Empresa
+    protected Cliente(String nome, String email) {
+        this.nome = nome;
+        this.email = email;
+        this.pedidos = new ArrayList<>();
+    }
+
+    // Construtor protegido com endereço para Empresa
+    protected Cliente(String nome, Endereco endereco, String email) {
+        this(nome, email);
         this.endereco = endereco;
     }
 
@@ -60,6 +74,7 @@ public class Cliente {
         this.nome = nome;
     }
 
+
     public Endereco getEndereco() {
         return endereco;
     }
@@ -71,7 +86,7 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
     public String getCpf() {
         return cpf;
     }
@@ -85,7 +100,7 @@ public class Cliente {
     }
 
     public ArrayList<Pedido> getPedidos() {
-        return pedidos;
+        return new ArrayList<>(pedidos);
     }
 
     @Override

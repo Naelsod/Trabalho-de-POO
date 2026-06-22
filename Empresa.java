@@ -3,13 +3,13 @@ package ecommerce;
 public class Empresa extends Cliente {
     private String cnpj;
 
-    public Empresa(String nome, String email, String cpf, String cnpj) {
-        super(nome, email, cpf);
+    public Empresa(String nome, String email, String cnpj) {
+        super(nome, email);
         this.cnpj = cnpj;
     }
 
-    public Empresa(String nome, Endereco endereco, String email, String cpf, String cnpj) {
-        super(nome, endereco, email, cpf);
+    public Empresa(String nome, Endereco endereco, String email, String cnpj) {
+        super(nome, endereco, email);
         this.cnpj = cnpj;
     }
 
@@ -21,7 +21,7 @@ public class Empresa extends Cliente {
         this.cnpj = cnpj;
     }
 
-    // Sobrescrita: empresa usa CNPJ como documento principal
+    // Sobrescrita: Empresa usa CNPJ como documento principal
     @Override
     public String getDocumento() {
         return cnpj;
