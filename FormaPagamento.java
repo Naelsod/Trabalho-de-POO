@@ -1,7 +1,9 @@
-package ecommerce;
+package pagamento;
 
-public interface FormaPagamento {
-    String getNome();
-    double calcularValor(double valorPedido);
-    void pagar(double valorPedido);
+public interface Pagamento {
+
+    double calcularValorFinal(double valor);
+
+    void realizarPagamento(double valor);
+
 }

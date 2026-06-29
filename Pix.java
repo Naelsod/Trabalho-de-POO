@@ -1,22 +1,18 @@
-package ecommerce;
+package pagamento;
 
-public class Pix implements FormaPagamento {
-    private static final double DESCONTO = 0.15;
+public class Pix implements Pagamento {
 
     @Override
-    public String getNome() {
-        return "PIX";
+    public double calcularValorFinal(double valor) {
+        return valor * 0.85; // desconto de 15%
     }
 
     @Override
-    public double calcularValor(double valorPedido) {
-        return valorPedido - (valorPedido * DESCONTO);
+    public void realizarPagamento(double valor) {
+        System.out.println("Pagamento via PIX");
+        System.out.println("Valor original: R$ " + valor);
+        System.out.println("Desconto: 15%");
+        System.out.println("Valor final: R$ " + calcularValorFinal(valor));
     }
 
-    @Override
-    public void pagar(double valorPedido) {
-        System.out.println("Pagamento via PIX com 15% de desconto.");
-        System.out.println("Valor original: R$ " + String.format("%.2f", valorPedido));
-        System.out.println("Valor final: R$ " + String.format("%.2f", calcularValor(valorPedido)));
-    }
 }

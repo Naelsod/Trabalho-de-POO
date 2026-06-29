@@ -1,18 +1,16 @@
-package ecommerce;
+package pagamento;
 
-public class Boleto implements FormaPagamento {
+public class Boleto implements Pagamento {
+
     @Override
-    public String getNome() {
-        return "Boleto";
+    public double calcularValorFinal(double valor) {
+        return valor;
     }
 
     @Override
-    public double calcularValor(double valorPedido) {
-        return valorPedido;
+    public void realizarPagamento(double valor) {
+        System.out.println("Pagamento por Boleto");
+        System.out.println("Valor: R$ " + calcularValorFinal(valor));
     }
 
-    @Override
-    public void pagar(double valorPedido) {
-        System.out.println("Boleto gerado no valor de R$ " + String.format("%.2f", valorPedido));
-    }
 }

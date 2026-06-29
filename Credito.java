@@ -1,18 +1,16 @@
-package ecommerce;
+package pagamento;
 
-public class Credito implements FormaPagamento {
+public class Credito implements Pagamento {
+
     @Override
-    public String getNome() {
-        return "Credito";
+    public double calcularValorFinal(double valor) {
+        return valor;
     }
 
     @Override
-    public double calcularValor(double valorPedido) {
-        return valorPedido;
+    public void realizarPagamento(double valor) {
+        System.out.println("Pagamento no Crédito");
+        System.out.println("Valor: R$ " + calcularValorFinal(valor));
     }
 
-    @Override
-    public void pagar(double valorPedido) {
-        System.out.println("Pagamento no cartao de credito: R$ " + String.format("%.2f", valorPedido));
-    }
 }
